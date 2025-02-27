@@ -1,0 +1,4 @@
+include README.md
+include openapi_agent_tools/README.md
+include LICENSE
+recursive-include openapi_agent_tools *.py

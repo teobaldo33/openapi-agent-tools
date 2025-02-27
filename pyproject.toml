@@ -1,0 +1,50 @@
+[project]
+name = "openapi_agent_tools"
+version = "0.1.0"
+description = "Generation and validation of Claude-compatible tools from OpenAPI specifications"
+authors = [
+  { name="Théo Tenaguillo", email="theo.tenaguillo@gmail.com" },
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["openapi", "claude", "anthropic", "ai", "tools", "api"]
+dependencies = [
+    "requests>=2.25.0",
+    "PyYAML>=5.4.0",
+    "chardet>=4.0.0",
+    "ruamel.yaml>=0.17.0"
+]
+
+[project.urls]
+"Bug Reports" = "https://github.com/username/openapi-agent-tools/issues"
+"Source" = "https://github.com/username/openapi-agent-tools"
+
+[project.scripts]
+openapi-agent-tools = "openapi_agent_tools.cli:main"
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["openapi_agent_tools"]
+license-files = []
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+exclude = ["agent*", "logs*", "tests*"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
